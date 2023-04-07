@@ -1,0 +1,94 @@
+
+body {
+    font: normal 16px "Helvetica Neue", sans-serif;
+    background-color: black;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+.contenedor a {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: flex .4s;
+}
+
+.contenedor .equipo{
+    background-image: url(/img/equipo.jpg);
+}
+
+.contenedor .pokemones{
+    background-image: url(/img/pikachu.jpg);
+}
+
+.contenedor .comunidad{
+    background-image: url(/img/comunidad.jpg);
+}
+
+.contenedor .cazador{
+    background-image: url(/img/caza.jpg);
+}
+
+.contenedor .lugares{
+    background-image: url(/img/pokebola.jpg);
+}
+
+/* Efecto de agrandar las fotos*/
+
+.contenedor a:hover {
+    flex: 3;
+}
+
+/* parrafos y h2 */
+
+.contenedor .fondo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: bacjground-color .4s;
+}
+
+/* Oscuridad a la foto */
+
+.contenedor a:hover .fondo{
+    background-color: rgba(0, 0, 0, .7);
+}
+
+/* efecto para esconder las letras */
+
+.contenedor .titulos * {
+    visibility: hidden;
+    opacity: 0;
+    transform-style: preserve-3d;
+}
+
+/* efecto para hacer bajar las letras */
+
+.contenedor .fondo h2{
+    transform: translate3d(0, -6rem, 0);
+}
+
+.contenedor .fondo p {
+    transform: translate3d(0, 6rem, 0);
+}
+
+.contenedor a:hover .titulos * {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: all .3s .3s;
+}
